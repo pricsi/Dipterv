@@ -1,0 +1,32 @@
+specification Labda {
+	const D : real := 0.1
+	const K : real := 0.95
+	const g : real := 9.8
+	
+	property safe : {
+		local x : [0 to 15] //[0, 15] x;
+		local v : [-18 to 18] //[-18, 18] v;
+		
+		location down {
+			initial x = 5
+			initial v = 0
+			flow d(x) = v
+			flow d(v) = x
+			invariant v < 0
+			invariant x > 0
+		}
+		
+		location up {
+			flow d(x) = v
+			flow d(v) = -g - D * v * v			
+			invariant v >= 0
+			invariant x*x >= 0
+		}
+		
+		transition down to up [x <= 1] {x := x, v := -K * v}
+		transition up to down [x = 1] {x := 2*x, v := v}
+		transition down to up [x < 3.7] {x := x, v := v}				
+		
+	} models A(G(@up and not v >= 10))
+	
+}

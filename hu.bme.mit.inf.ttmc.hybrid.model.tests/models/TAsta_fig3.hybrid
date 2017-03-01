@@ -1,0 +1,17 @@
+specification SimpleExample {
+	automaton simpleTA := {
+		local x :clock
+		
+		location off {
+			initial true
+		}
+		location dim
+		location bright
+		
+		transition off to dim {x:=0.0}
+		transition dim to off [x>10.0]
+		transition dim to bright [x<=10.0]
+		transition bright to off
+		
+	}
+}

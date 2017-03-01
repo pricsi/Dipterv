@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated TTMCConstraint -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="TTMCConstraint.presentation.TTMCConstraintModelWizardID"
+            name="%_UI_TTMCConstraintModelWizard_label"
+            class="TTMCConstraint.presentation.TTMCConstraintModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TTMCConstraintModelFile.gif">
+         <description>%_UI_TTMCConstraintModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated TTMCConstraint -->
+      <editor
+            id="TTMCConstraint.presentation.TTMCConstraintEditorID"
+            name="%_UI_TTMCConstraintEditor_label"
+            icon="icons/full/obj16/TTMCConstraintModelFile.gif"
+            extensions="ttmcconstraint"
+            class="TTMCConstraint.presentation.TTMCConstraintEditor"
+            contributorClass="TTMCConstraint.presentation.TTMCConstraintActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

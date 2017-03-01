@@ -1,0 +1,56 @@
+specification Labda {
+	const D : real := 0.1
+	
+	property nyuszika : {
+		local x : real //[0, 15] x;
+		local v : real //[-18, 18] v;
+		//[0, 3] time;
+		
+		location sta1d {
+			initial x = 5
+			initial v = 0
+			flow d(x) = v
+			flow d(v) = -D * v * v
+			invariant v <= 0
+			invariant x >= 0
+		}
+		
+		location sta2d {
+			flow d(x) = v
+			flow d(v) = D * v * v			
+			invariant v >= 0
+			invariant x >= 0
+		}
+		
+				location sta3d {
+			flow d(x) = v
+			flow d(v) = D * v * v			
+			invariant v >= 0
+			invariant x >= 0
+		}
+		
+				location sta4d {
+			flow d(x) = v
+			flow d(v) = D * v * v			
+			invariant v >= 0
+			invariant x >= 0
+		}
+		
+				location sta5d {
+			flow d(x) = v
+			flow d(v) = D * v * v			
+			invariant v >= 0
+			invariant x >= 0
+		}
+		
+		transition sta1d to sta2d [x <= 1] {x := x, v := -v}
+		transition sta1d to sta3d [x = 1] {x := x, v := v}
+		transition sta1d to sta3d [x > 2] {x := x, v := v}
+		transition sta3d to sta4d [x <= 1] {x := x, v := -v}
+		transition sta4d to sta1d [x = 1] {x := x, v := v}
+		transition sta2d to sta4d [x > 2, v > 1] {x := x, v := v}
+		transition sta3d to sta2d [x = 1] {x := x, v := v}			
+		
+	} models E(F(@sta5d and x >= 10))
+	
+}

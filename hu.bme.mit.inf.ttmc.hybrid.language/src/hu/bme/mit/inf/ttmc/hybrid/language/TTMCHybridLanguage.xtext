@@ -1,0 +1,134 @@
+grammar hu.bme.mit.inf.ttmc.hybrid.language.TTMCHybridLanguage with hu.bme.mit.inf.ttmc.constraint.language.TTMCConstraintLanguage
+
+import "http://www.inf.mit.bme.hu/ttmc/TTMCHybrid" 
+import "http://www.inf.mit.bme.hu/ttmc/TTMCConstraint" as TTMCConstraint
+
+HybridSpecification returns HybridSpecification:
+	'specification' name=ID ('(' ((parameterDeclarations+=ParameterDeclaration)(',' parameterDeclarations+=ParameterDeclaration)*)? ')')? '{'
+		(
+			typeDeclarations+=TypeDeclaration |
+			functionDeclarations+=FunctionDeclaration |
+			constantDeclarations+=ConstantDeclaration |
+			basicConstraintDefinitions+=BasicConstraintDefinition |
+			hybridAutomatonDeclarations+=HybridAutomatonDeclaration |
+			propertyDeclarations+=PropertyDeclaration
+		)*
+	'}'
+;
+
+// override
+TypeDefinition returns TTMCConstraint::TypeDefinition:
+	NaturalTypeDefinition |
+	IntegerTypeDefinition |
+	BooleanTypeDefinition |
+	RealTypeDefinition |
+	ArrayTypeDefinition |
+	EnumerationTypeDefinition |
+	RecordTypeDefinition |
+	TupleTypeDefinition |
+	SubrangeTypeDefinition |
+	SubTypeDefinition |
+	FunctionTypeDefinition |
+	
+	// add
+	ClockTypeDefinition
+;
+
+ClockTypeDefinition returns ClockTypeDefinition:
+	{ClockTypeDefinition} 'clock'
+;
+
+// override
+PrimaryExpression returns TTMCConstraint::Expression:
+	LiteralExpression | ReferenceExpression |
+	
+	// add
+	LocationReferenceExpression |
+	
+	'(' Expression ')'
+;
+
+LocationReferenceExpression returns LocationReferenceExpression:
+	'@' location=[Location]
+;
+
+// override
+SignumExpression returns TTMCConstraint::Expression:
+	{TTMCConstraint::UnaryMinusExpression} => '-' operand=SignumExpression |
+	{TTMCConstraint::UnaryPlusExpression} => '+' operand=SignumExpression |
+	
+	// add
+	{DotExpression} => 'd' operand=SignumExpression |
+
+	AccessExpression
+;
+
+
+
+
+HybridAutomatonDeclaration returns HybridAutomatonDeclaration:
+	'automaton' name=ID ('(' ((parameterDeclarations+=ParameterDeclaration)(',' parameterDeclarations+=ParameterDeclaration)*)? ')')? ':=' hybridAutomaton=HybridAutomaton
+;
+
+HybridAutomaton returns HybridAutomaton:
+	HybridAutomatonDefinition
+;
+
+HybridAutomatonDefinition returns HybridAutomatonDefinition:
+	{HybridAutomatonDefinition} '{'
+		(
+			variableDeclarations+=VariableDeclaration |
+			locations+=Location |
+			transitions+=Transition
+		)*
+	'}'
+;
+
+VariableDeclaration returns VariableDeclaration:
+	GlobalVariableDeclaration | LocalVariableDeclaration
+;
+
+GlobalVariableDeclaration returns GlobalVariableDeclaration:
+	'global' name=ID ':' type=Type
+;
+
+LocalVariableDeclaration returns LocalVariableDeclaration:
+	'local' name=ID ':' type=Type
+;
+
+Location returns Location:
+	'location' name=ID ('{'
+		(conditions+=Condition)*
+	'}')?
+;
+
+Transition returns Transition:
+	'transition' source=[Location] 'to' target=[Location]
+			('(' (parameterDeclarations+=ParameterDeclaration)(',' parameterDeclarations+=ParameterDeclaration)* ')')?
+			('[' (guards+=Expression)(',' guards+=Expression)* ']')?
+			('{' (assignments+=Assignment)(',' assignments+=Assignment)* '}')?
+;
+
+Assignment returns Assignment:
+	lhs=Expression ':=' rhs=Expression
+;
+
+Condition returns Condition:
+	InitialCondition | InvariantCondition | FlowCondition
+;
+
+InitialCondition returns InitialCondition:
+	'initial' expression=Expression
+;
+
+InvariantCondition returns InvariantCondition:
+	'invariant' expression=Expression
+;
+
+FlowCondition returns FlowCondition:
+	'flow' expression=Expression
+;
+
+PropertyDeclaration returns PropertyDeclaration:
+	'property' name=ID ':' hybridAutomaton=HybridAutomaton 'models' expression=Expression
+;

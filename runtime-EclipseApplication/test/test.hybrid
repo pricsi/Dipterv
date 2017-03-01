@@ -1,0 +1,29 @@
+specification Test {
+	
+	type T : enum {a, b, c}
+	
+	const c : integer := 10
+	
+	function max(x : real, y : real) : real := if x > y then x else y
+	
+	constraint c < 100
+	
+	property safe : {
+		local x : real
+		local y : [-inf to inf]
+		
+		location off {
+			initial x > 0
+			flow d(x) = 1
+		}
+		
+		location on {
+			flow d(x) = 2 * x
+			invariant x >= 0
+		}
+		
+		transition off to on (i : [0 to 10]) [x < 10 * i] {x := max(x, i)}
+		
+	} models G(@on imply x > 0)
+	
+}

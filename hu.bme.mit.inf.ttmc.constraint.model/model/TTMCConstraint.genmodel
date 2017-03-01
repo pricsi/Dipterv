@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.inf.ttmc.constraint.model/src" modelPluginID="hu.bme.mit.inf.ttmc.constraint.model"
+    modelName="TTMCConstraint" rootExtendsClass="hu.bme.mit.inf.ttmc.constraint.model.TTMCConstraintEObjectImpl"
+    featureMapWrapperInternalInterface="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" providerRootExtendsClass="" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>TTMCConstraint.ecore</foreignModel>
+  <genPackages prefix="TTMCConstraint" disposableProviderFactory="true" ecorePackage="TTMCConstraint.ecore#/">
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TTMCConstraint.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//ParametricElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//ParametricElement/parameterDeclarations"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ParametrizedElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//ParametrizedElement/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ConstraintSpecification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//ConstraintSpecification/typeDeclarations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//ConstraintSpecification/constantDeclarations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//ConstraintSpecification/functionDeclarations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//ConstraintSpecification/basicConstraintDefinitions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//Declaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//Declaration/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//DefinableDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//DefinableDeclaration/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ParameterDeclaration"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//FieldDeclaration"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ConstantDeclaration"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//FunctionDeclaration"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//Type"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//TypeDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//TypeDeclaration/type"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//TypeReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//TypeReference/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//TypeDefinition"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//BasicTypeDefinition"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//IntegerTypeDefinition"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//NaturalTypeDefinition"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//BooleanTypeDefinition"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//RealTypeDefinition"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ArrayTypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//ArrayTypeDefinition/indexType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//ArrayTypeDefinition/elementType"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//EnumerationTypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//EnumerationTypeDefinition/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//EnumerationLiteralDefinition"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//RecordTypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//RecordTypeDefinition/fieldDeclarations"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//TupleTypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//TupleTypeDefinition/types"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//SubrangeTypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//SubrangeTypeDefinition/lowerBound"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//SubrangeTypeDefinition/upperBound"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//SubTypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//SubTypeDefinition/parameterDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//SubTypeDefinition/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//FunctionTypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//FunctionTypeDefinition/parameterTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//FunctionTypeDefinition/returnType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//PseudoTypeDefinition"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//UniversalEnumTypeDefinition"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//UnknownTypeDefinition"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//InvalidTypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//InvalidTypeDefinition/problems"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//UnknownInvalidTypeDefinition"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//KnownInvalidTypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//KnownInvalidTypeDefinition/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//TypeProblem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TTMCConstraint.ecore#//TypeProblem/message"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//TypeProblem/source"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//TypeError"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//TypeWarning"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//ConstraintDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//ConstraintDefinition/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//BasicConstraintDefinition"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//Expression"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//NullaryExpression"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//UnaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//UnaryExpression/operand"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//BinaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//BinaryExpression/leftOperand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//BinaryExpression/rightOperand"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//MultiaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//MultiaryExpression/operands"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//PredicateExpression"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//ArithmeticExpression"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//AccessExpression"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//BooleanExpression"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//QuantifierExpression"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//TemporalExpression"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//TemporalPathExpression"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//TemporalStateExpression"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//LiteralExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//IntegerLiteralExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TTMCConstraint.ecore#//IntegerLiteralExpression/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//RealLiteralExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TTMCConstraint.ecore#//RealLiteralExpression/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//BooleanLiteralExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//TrueExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//FalseExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ArrayLiteralExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//ArrayLiteralExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//FunctionLiteralExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//FunctionLiteralExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//RecordLiteralExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//RecordLiteralExpression/fieldAssignments"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//FieldAssignment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TTMCConstraint.ecore#//FieldAssignment/reference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//FieldAssignment/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//EnumerationLiteralExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//EnumerationLiteralExpression/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//TupleLiteralExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//TupleLiteralExpression/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ReferenceExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//ReferenceExpression/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//IfThenElseExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//IfThenElseExpression/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//IfThenElseExpression/then"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//IfThenElseExpression/else"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//EqualExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ImplyExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//OrExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//AndExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ReleaseExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//UntilExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//NotExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ForallExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ExistsExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//GloballyExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//FinallyExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//NextExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//TemporalForallExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//TemporalExistsExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//InExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCConstraint.ecore#//InExpression/type"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//PrimedExpression"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//EquivalenceExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//EqualityExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//InequalityExpression"/>
+    <genClasses image="false" ecoreClass="TTMCConstraint.ecore#//ComparisionExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//GreaterExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//GreaterEqualExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//LessExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//LessEqualExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//AddExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//SubtractExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//MultiplyExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//DivideExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//DivExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ModExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//UnaryMinusExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//UnaryPlusExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//FunctionAccessExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//ArrayAccessExpression"/>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//TupleAccessExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TTMCConstraint.ecore#//TupleAccessExpression/index"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCConstraint.ecore#//RecordAccessExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TTMCConstraint.ecore#//RecordAccessExpression/field"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

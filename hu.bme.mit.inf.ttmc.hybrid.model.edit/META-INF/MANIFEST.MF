@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: hu.bme.mit.inf.ttmc.hybrid.model.edit;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: TTMCHybrid.provider.TTMCHybridEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: TTMCHybrid.provider
+Require-Bundle: org.eclipse.core.runtime,
+ hu.bme.mit.inf.ttmc.hybrid.model;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ hu.bme.mit.inf.ttmc.constraint.model;visibility:=reexport,
+ hu.bme.mit.inf.ttmc.constraint.model.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

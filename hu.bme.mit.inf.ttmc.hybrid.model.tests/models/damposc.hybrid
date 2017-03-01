@@ -1,0 +1,60 @@
+specification Oscill {
+	
+	//const dam : real := 0.3
+	
+	property isDivergent : {
+		local x : [-3 to 3]
+		local y : [-3 to 3]
+		local qq : [-1 to 100]		
+		local dam : [0 to 3]
+		local omm : [0 to 7]
+		
+		location loc1 {
+			initial dam = 0.1
+			initial omm = 1
+			initial qq = 0
+			initial x = 1
+			initial y = -0.1
+			flow d(x) = y
+			flow d(y) = -omm*omm*x - 2*dam*omm*y
+			flow d(qq) = 1
+			flow d(omm) = 0
+			flow d(dam) = 0
+			invariant y>=-x
+		}
+		
+		location loc2 {
+			flow d(x) = y
+			flow d(y) = -omm*omm*x - 2*dam*omm*y
+			flow d(qq) = 1
+			flow d(omm) = 0
+			flow d(dam) = 0
+			invariant y<=x
+		}
+		
+		location loc3 {
+			flow d(x) = y
+			flow d(y) = -omm*omm*x - 2*dam*omm*y
+			flow d(qq) = 1
+			flow d(omm) = 0
+			flow d(dam) = 0
+			invariant y<=-x
+		}
+		
+		location loc4 {
+			flow d(x) = y
+			flow d(y) = -omm*omm*x - 2*dam*omm*y
+			flow d(qq) = 1
+			flow d(omm) = 0
+			flow d(dam) = 0
+			invariant y>=x
+		}
+		
+		transition loc1 to loc2 [y = -x] {x:=x, y:=y, dam:=dam/2, omm:=omm*2, qq:=qq}
+		transition loc2 to loc3 [y = x] {x:=x, y:=y, dam:=dam*2, omm:=omm/2, qq:=qq}
+		transition loc3 to loc4 [y = -x] {x:=x, y:=y, dam:=dam/2, omm:=omm*2, qq:=qq}
+		transition loc4 to loc1 [y = x] {x:=x, y:=y, dam:=dam*2, omm:=omm/2, qq:=qq}
+		
+
+	} models E(F(qq>=4))
+}

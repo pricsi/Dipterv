@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.inf.ttmc.hybrid.language
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: hu.bme.mit.inf.ttmc.hybrid.language; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ hu.bme.mit.inf.ttmc.hybrid.model;bundle-version="0.1.0",
+ hu.bme.mit.inf.ttmc.constraint.language;bundle-version="1.0.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: hu.bme.mit.inf.ttmc.hybrid.language,
+ hu.bme.mit.inf.ttmc.hybrid.language.services,
+ hu.bme.mit.inf.ttmc.hybrid.language.serializer,
+ hu.bme.mit.inf.ttmc.hybrid.language.parser.antlr,
+ hu.bme.mit.inf.ttmc.hybrid.language.parser.antlr.internal,
+ hu.bme.mit.inf.ttmc.hybrid.language.validation,
+ hu.bme.mit.inf.ttmc.hybrid.language.scoping,
+ hu.bme.mit.inf.ttmc.hybrid.language.generator,
+ hu.bme.mit.inf.ttmc.hybrid.language.formatting

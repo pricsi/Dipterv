@@ -1,0 +1,27 @@
+specification Tank1 {
+	property nyuszika : {
+		local x : [0 to 11]
+		
+		location on {
+			initial x = 5
+			flow d(x) = 1
+			invariant x <= 9
+		}
+		
+		location off {
+			flow d(x) = -0.1
+			invariant x >= 3
+		}
+		
+		location open {
+			flow d(x) = -2
+			invariant x >= 0
+		}
+		
+		transition on to off [x >= 7] {x := x+1}
+		transition off to open [x < 5] {x := x}
+		transition open to on [x <= 2] {x := x}	
+		
+	} models E(F(x <= 1))
+	
+}

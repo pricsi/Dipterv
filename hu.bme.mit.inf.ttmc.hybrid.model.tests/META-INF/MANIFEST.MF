@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests
+Bundle-SymbolicName: hu.bme.mit.inf.ttmc.hybrid.model.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: com.google.guava,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtext.xbase.lib,
+ org.junit;bundle-version="4.11.0",
+ hu.bme.mit.inf.ttmc.hybrid.language;bundle-version="1.0.0",
+ hu.bme.mit.inf.ttmc.constraint.language;bundle-version="1.0.0",
+ hu.bme.mit.inf.ttmc.constraint.model;bundle-version="0.1.0",
+ hu.bme.mit.inf.ttmc.hybrid.model;bundle-version="0.1.0",
+ hu.bme.mit.inf.ttmc.hybrid.verification;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Import-Package: hu.bme.mit.inf.ttmc.hybrid.verification
+

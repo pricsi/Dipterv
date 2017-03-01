@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.inf.ttmc.hybrid.model/src" modelPluginID="hu.bme.mit.inf.ttmc.hybrid.model"
+    modelName="TTMCHybrid" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../hu.bme.mit.inf.ttmc.constraint.model/model/TTMCConstraint.genmodel#//TTMCConstraint"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>TTMCHybrid.ecore</foreignModel>
+  <genPackages prefix="TTMCHybrid" disposableProviderFactory="true" ecorePackage="TTMCHybrid.ecore#/">
+    <genClasses image="false" ecoreClass="TTMCHybrid.ecore#//HybridAutomaton"/>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//ClockTypeDefinition"/>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//DotExpression"/>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//HybridAutomatonDeclaration"/>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//HybridAutomatonDefinition"/>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//HybridAutomatonReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TTMCHybrid.ecore#//HybridAutomatonReference/declaration"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCHybrid.ecore#//VariableDecalration"/>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//LocalVariableDeclaration"/>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//GlobalVariableDeclaration"/>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//Location">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCHybrid.ecore#//Location/conditions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCHybrid.ecore#//Condition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCHybrid.ecore#//Condition/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//InitialCondition"/>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//InvariantCondition"/>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//FlowCondition"/>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TTMCHybrid.ecore#//Transition/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TTMCHybrid.ecore#//Transition/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCHybrid.ecore#//Transition/guards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCHybrid.ecore#//Transition/assignments"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCHybrid.ecore#//Assignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCHybrid.ecore#//Assignment/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCHybrid.ecore#//Assignment/rhs"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

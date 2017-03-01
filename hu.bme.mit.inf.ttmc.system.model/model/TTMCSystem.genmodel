@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.inf.ttmc.system.model/src" modelPluginID="hu.bme.mit.inf.ttmc.system.model"
+    modelName="TTMCSystem" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../hu.bme.mit.inf.ttmc.constraint.model/model/TTMCConstraint.genmodel#//TTMCConstraint"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>TTMCSystem.ecore</foreignModel>
+  <genPackages prefix="TTMCSystem" disposableProviderFactory="true" ecorePackage="TTMCSystem.ecore#/">
+    <genClasses ecoreClass="TTMCSystem.ecore#//ClockTypeDefinition"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//DefinitionDeclaration"/>
+    <genClasses image="false" ecoreClass="TTMCSystem.ecore#//VariableDeclaration"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//SystemSpecification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//SystemSpecification/systemDeclarations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//SystemSpecification/propertyDeclarations"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCSystem.ecore#//LocalVariableDeclaration"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//GlobalVariableDeclaration"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//InputVariableDeclaration"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//OutputVariableDeclaration"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//SystemDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//SystemDeclaration/system"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCSystem.ecore#//System"/>
+    <genClasses image="false" ecoreClass="TTMCSystem.ecore#//PseudoSystem"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//UnknownSystem"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//InvalidSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//InvalidSystem/problems"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCSystem.ecore#//SystemProblem"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//SystemError"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//SystemWarning"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//SystemDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//SystemDefinition/variableDeclarations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//SystemDefinition/definitionDeclarations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//SystemDefinition/systemConstraintDefinitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//SystemDefinition/behaviorDefinitions"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCSystem.ecore#//SystemReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//SystemReference/reference"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCSystem.ecore#//CompositeSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//CompositeSystem/leftSystem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//CompositeSystem/rightSystem"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCSystem.ecore#//SynchronousCompositeSystem"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//AsynchronousCompositeSystem"/>
+    <genClasses image="false" ecoreClass="TTMCSystem.ecore#//MultiSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//MultiSystem/system"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCSystem.ecore#//SynchronousMultiSystem"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//AsynchronousMultiSystem"/>
+    <genClasses image="false" ecoreClass="TTMCSystem.ecore#//SystemConstraintDefinition"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//UrgencyConstraintDefinition"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//InvariantConstraintDefinition"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//PropertyDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//PropertyDeclaration/system"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//PropertyDeclaration/expression"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCSystem.ecore#//BehaviorDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//BehaviorDefinition/command"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCSystem.ecore#//TransitionDefinition"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//InitializationDefinition"/>
+    <genClasses image="false" ecoreClass="TTMCSystem.ecore#//Command">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TTMCSystem.ecore#//Command/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCSystem.ecore#//SimpleCommand"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//ElseCommand">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//ElseCommand/command"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCSystem.ecore#//AssignmentCommand">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//AssignmentCommand/expression"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCSystem.ecore#//MultiCommand">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//MultiCommand/command"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCSystem.ecore#//SynchronousMultiCommand"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//AsynchronousMultiCommand"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//GuardedCommand">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//GuardedCommand/guard"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//GuardedCommand/command"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TTMCSystem.ecore#//CompositeCommand">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//CompositeCommand/commands"/>
+    </genClasses>
+    <genClasses ecoreClass="TTMCSystem.ecore#//SynchronousCompositeCommand"/>
+    <genClasses ecoreClass="TTMCSystem.ecore#//AsynchronousCompositeCommand">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TTMCSystem.ecore#//AsynchronousCompositeCommand/elseCommands"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

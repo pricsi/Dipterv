@@ -1,0 +1,33 @@
+specification Train {
+	
+		const s : real := 100
+		const b : real := 5
+	
+	property canstop : {
+		local a : [-100 to 100]
+		local z : [0 to 1000]
+		local v : [-100 to 1000]
+
+		
+		location accel {
+			initial z = 0
+			initial v = 30
+			initial a = 3
+			flow d(z) = v
+			flow d(v) = a
+			flow d(a) = 0
+		}
+		
+		location brake {
+			flow d(z) = v
+			flow d(v) = a
+			flow d(a) = 0
+			invariant v >= 0
+		}
+		
+		transition accel to brake [z >= s] {a := -b, z := z, v:=v}
+		transition brake to accel [v <= 1] {a := a+5, z:=z, v:=v}
+		
+	} models E(F(z<=250 and v<2))
+	
+}
