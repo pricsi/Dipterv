@@ -73,13 +73,13 @@ class PathChecker {
 		))
 		«printCheckSat»'''
 		//println(prog.replaceAll("\\(","("))
-		val writer = new PrintWriter("wasser.smt2", "UTF-8");
+		val writer = new PrintWriter("system.smt2", "UTF-8");
 		writer.print(prog);
 		writer.close();
 		var String s;
         var Process p;
         var ret = ''''''
-        var runString = "dReal --proof wasser.smt2"
+        var runString = "dReal --proof system.smt2"
         if (visualize)
         	runString += " --visualize"
         //path.forEach[x|print('''«x.name» ''')]

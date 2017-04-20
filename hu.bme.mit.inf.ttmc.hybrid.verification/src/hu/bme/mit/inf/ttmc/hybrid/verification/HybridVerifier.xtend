@@ -91,12 +91,25 @@ class HybridVerifier {
 		BMCList.forEach[x|print('''«x.name» ''')]
 	}
 	
-	def verify(HybridSpecification model) {
+	def dRealVerify(HybridSpecification model) {
 		automaton = model.propertyDeclarations.get(0).hybridAutomaton
 		tempExpression = model.propertyDeclarations.get(0).expression
 		collectLocations(automaton)
 		collectTransactions(automaton)
-		doBoundedModelCheck(0,1)
+		doBoundedModelCheck(0,3)
+
+	}
+	
+	def spaceExVerify(HybridSpecification model){
+		val spaceExPrinter = new SpaceExPrinter(model)
+		spaceExPrinter.printXml()
+	}
+	
+	def verify(HybridSpecification model) {
+		//println('''dReal verification result:''')
+		//dRealVerify(model)
+		println('''SpaceEx verification...''')
+		spaceExVerify(model)	
 	}
 
 	
