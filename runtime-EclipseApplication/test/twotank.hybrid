@@ -1,0 +1,47 @@
+specification TwoTank {
+	
+	property safe : {
+		local x1 : real //[0, 15] x;
+		local x2 : real //[-18, 18] v;
+		//[0, 3] time;
+		
+		location off_off {
+			initial x1 <= 2.5
+			initial x1 >= 1.5
+			initial x2 = 1
+			flow d(x1) = -x1 - 2
+			flow d(x2) = x1
+			invariant x1 >= -1
+			invariant x2 <= 1
+		}
+		
+		location on_off {
+			flow d(x1) = -x1 + 3
+			flow d(x2) = x1	
+			invariant x2 <= 1
+		}
+		
+		location off_on {
+			flow d(x1) = -x1 - 2
+			flow d(x2) = x1 - x2 - 5
+			invariant x1 >= -1
+			invariant x2 >= 0			
+		}
+		
+		location on_on {
+			flow d(x1) = -x1 + 3
+			flow d(x2) = x1 - x2 - 5
+			invariant x1 <= 1
+			invariant x2 >= 0			
+		}		
+		
+		transition off_off to on_off [x1 = -1] {x1 := x1, x2 := x2}
+		transition off_off to off_on [x2 = 1] {x1 := x1, x2 := x2}
+		transition on_off to off_on [x2 = 1] {x1 := x1, x2 := x2}				
+		transition off_on to off_off [x2 = 0] {x1 := x1, x2 := x2}
+		transition off_on to on_on [x1 = -1] {x1 := x1, x2 := x2}
+		transition on_on to on_off [x2 = 0] {x1 := x1, x2 := x2}				
+		transition on_on to off_on [x1 = 1] {x1 := x1, x2 := x2}			
+	} models G(x2>-0.4)
+	
+}

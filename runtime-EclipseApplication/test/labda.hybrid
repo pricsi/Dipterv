@@ -27,6 +27,6 @@ specification Labda {
 		transition down to up [x <= 1] {x := x, v := -K * v}
 		transition up to down [x = 1] {x := x, v := v}		
 		
-	} models G(@up imply v <= 10)
+	} models G(@up imply v <= 3)
 	
 }

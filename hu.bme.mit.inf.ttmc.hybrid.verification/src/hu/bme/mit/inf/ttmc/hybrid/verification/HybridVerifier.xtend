@@ -66,7 +66,7 @@ class HybridVerifier {
 		pathChecker.t_infty = 100.0
 		val result = pathChecker.checkPath
 		printList()
-		if (result.toString.equals("sat")) {
+		if (result.toString.equals("sat") || result.toString.startsWith("delta-sat")) {
 			println(''': SAT!''')
 			hasSat = true
 			visualizeSatPath(traj)
@@ -81,7 +81,7 @@ class HybridVerifier {
 		pathChecker.t_infty = 100.0
 		pathChecker.visualize = true
 		val result = pathChecker.checkPath
-		if (result.toString.equals("sat")) {
+		if (result.toString.equals("sat") || result.toString.startsWith("delta-sat")) {
 			println("nyuszi")
 		}		
 		else println('''What the actual ****: «result.toString»''')
@@ -91,12 +91,12 @@ class HybridVerifier {
 		BMCList.forEach[x|print('''«x.name» ''')]
 	}
 	
-	def dRealVerify(HybridSpecification model) {
+	def dRealVerify(HybridSpecification model, int upperBound) {
 		automaton = model.propertyDeclarations.get(0).hybridAutomaton
 		tempExpression = model.propertyDeclarations.get(0).expression
 		collectLocations(automaton)
 		collectTransactions(automaton)
-		doBoundedModelCheck(0,3)
+		doBoundedModelCheck(0,upperBound) //lower and upper bound
 
 	}
 	
@@ -106,8 +106,8 @@ class HybridVerifier {
 	}
 	
 	def verify(HybridSpecification model) {
-		//println('''dReal verification result:''')
-		//dRealVerify(model)
+		println('''dReal verification result:''')
+		dRealVerify(model,5)
 		println('''SpaceEx verification...''')
 		spaceExVerify(model)	
 	}
